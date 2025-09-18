@@ -9,6 +9,10 @@ from chart import ChartManager
 import datetime
 def run_app():
     import os
+     # 自动检测并创建账本数据文件夹
+    books_dir = "d:/project/account/books"
+    if not os.path.exists(books_dir):
+        os.makedirs(books_dir)
     def export_pdf_action():
         from tkinter import filedialog
         pdf_path = filedialog.asksaveasfilename(defaultextension=".pdf", filetypes=[("PDF文件", "*.pdf")])
@@ -212,3 +216,4 @@ def run_app():
     tk.Button(filter_frame, text="筛选", command=filter_by_category).pack(side=tk.LEFT, padx=5)
 
     app.mainloop()
+
