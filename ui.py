@@ -9,7 +9,7 @@ from chart import ChartManager
 import datetime
 def run_app():
     import os
-     # 自动检测并创建账本数据文件夹
+    # 自动检测并创建账本数据文件夹
     books_dir = "d:/project/account/books"
     if not os.path.exists(books_dir):
         os.makedirs(books_dir)
@@ -81,7 +81,7 @@ def run_app():
     tk.Entry(book_frame, textvariable=new_book_var, width=12).pack(side=tk.LEFT)
     tk.Button(book_frame, text="新建账本", command=new_book).pack(side=tk.LEFT, padx=5)
     tk.Button(book_frame, text="删除账本", command=delete_book).pack(side=tk.LEFT, padx=5)
-    refresh_books()
+    refresh_books()  # 初始化时刷新账本列表，确保显示所有账本
     dm = DataManager()
 
     # 账本管理区
@@ -216,4 +216,3 @@ def run_app():
     tk.Button(filter_frame, text="筛选", command=filter_by_category).pack(side=tk.LEFT, padx=5)
 
     app.mainloop()
-
