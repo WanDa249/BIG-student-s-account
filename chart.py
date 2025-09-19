@@ -58,7 +58,7 @@ class ChartManager:
             shift = 0.2 + 0.6 * (idx / max(1,total-1)) if total > 1 else 0.5
             pie_colors_income.append(color_shift(color_map_income[cat], shift, scale=0.3))
             cat_remark_idx_income[cat] = idx + 1
-        if not summary_income.empty:
+            if not summary_income.empty:
                 plt.figure(figsize=(6,6))
                 plt.pie(summary_income, labels=summary_income.index, autopct='%1.1f%%', startangle=140, colors=pie_colors_income)
                 plt.axis('equal')
@@ -91,4 +91,5 @@ class ChartManager:
         plt.show()
 
    
+
 
