@@ -1,4 +1,4 @@
 @echo off
-cd /d d:\project\account\account
-"d:\project\account\.conda\python.exe" main.py
+cd /d "%~dp0"
+python account\main.py
 pause
